@@ -1,12 +1,13 @@
-﻿using System;
+﻿using LabsInterface;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AllLabs
+namespace LabsLibrary
 {
-    internal class Lab3 : ILabs
+    public class Lab3 : ILabs
     {
         /// <summary>
         /// Метод демонстрации всех заданий лабораторной работы
@@ -54,7 +55,7 @@ namespace AllLabs
             Console.WriteLine();
             //zadanie 2
             int chi = 0, summa = 0;
-            while (chi <= 30)
+            while (chi < 30)
             {
                 int nc = chi % 2;
                 chi++;
@@ -74,7 +75,7 @@ namespace AllLabs
         /// <returns>Описание лабы</returns>
         public string Description()
         {
-            return "";
+            return "Задании 3";
         }
         /// <summary>
         /// Метод возвращает номер лабораторной работы

@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using LabsInterface;
 
-namespace AllLabs
+namespace LabsLibrary
 {
-    internal class Lab1 : ILabs
+    public class Lab1 : ILabs
     {
         /// <summary>
         /// Метод демонстрации всех заданий лабораторной работы
@@ -59,7 +60,7 @@ namespace AllLabs
         /// <returns>Описание лабы</returns>
         public string Description()
         {
-            return "";
+            return "Задание 1";
         }
         /// <summary>
         /// Метод возвращает номер лабораторной работы

@@ -1,12 +1,13 @@
-﻿using System;
+﻿using LabsInterface;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AllLabs
+namespace LabsLibrary
 {
-    internal class Lab2 : ILabs
+    public class Lab2 : ILabs
     {
         /// <summary>
         /// Метод демонстрации всех заданий лабораторной работы
@@ -134,7 +135,7 @@ namespace AllLabs
         /// <returns>Описание лабы</returns>
         public string Description()
         {
-            return "";
+            return "Задание 2";
         }
         /// <summary>
         /// Метод возвращает номер лабораторной работы

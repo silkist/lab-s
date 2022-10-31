@@ -4,43 +4,42 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AllLabs.Lab5
+namespace LabsLibrary.Lab5
 {
-    internal class Matrica
+    class Matrix
     {
-        private int _value1;
-        private int _value2;
+        private int _stroki;
+        private int _stolbi;
         private int[,] _massiv;
 
-        public Matrica(int value1, int value2)
+        public Matrix(int stroki, int stolbi)
         {
-            _value1 = value1;
-            _value2 = value2;
-            _massiv = new int[value1, value2];
+            _stroki = stroki;
+            _stolbi = stolbi;
+            _massiv = new int[stroki, stolbi];
         }
-
-
 
         public void Random()
         {
             Random rnd = new Random();
-            for (int i = 0; i < _value1; i++)
+            for (int i = 0; i < _stroki; i++)
             {
-                for (int w = 0; w < _value2; w++)
+                for (int j = 0; j < _stolbi; j++)
                 {
-                    _massiv[i, w] = rnd.Next(0, 100);
+                    _massiv[i, j] = rnd.Next(0, 100);
+
                 }
             }
 
         }
         public void Print()
         {
-            for (int i = 0; i < _value1; i++)
+            for (int i = 0; i < _stroki; i++)
             {
                 Console.WriteLine();
-                for (int w = 0; w < _value2; w++)
+                for (int j = 0; j < _stolbi; j++)
                 {
-                    Console.Write(_massiv[i, w] + "\t");
+                    Console.Write(_massiv[i, j] + "\t");
                 }
             }
 
@@ -50,20 +49,20 @@ namespace AllLabs.Lab5
             int sum = 0;
             for (int i = 0; i < _massiv.GetLength(0); i++)
             {
-                for (int w = 0; w < _massiv.GetLength(1); w++)
+                for (int j = 0; j < _massiv.GetLength(1); j++)
                 {
-                    sum += _massiv[i, w];
+                    sum += _massiv[i, j];
                 }
             }
             return sum;
         }
         public void GlavDiag()
         {
-            for (int i = 0; i < _value1; i++)
+            for (int i = 0; i < _stroki; i++)
             {
-                for (int w = 0; w < _value2; w++)
+                for (int j = 0; j < _stolbi; j++)
                 {
-                    if (i == w)
+                    if (i == j)
                     {
                         Console.WriteLine(_massiv[i, i]);
                     }
@@ -76,11 +75,11 @@ namespace AllLabs.Lab5
         {
             for (int i = 0; i < _massiv.GetLength(0); i++)
             {
-                for (int w = 0; w < _massiv.GetLength(1); w++)
+                for (int j = 0; j < _massiv.GetLength(1); j++)
                 {
-                    if (i == w)
+                    if (i == j)
                     {
-                        Console.WriteLine(_massiv[_massiv.GetLength(0) - i - 1, i]);
+                        Console.WriteLine(_massiv[i, _massiv.GetLength(0) - i - 1]);
                     }
                 }
             }
